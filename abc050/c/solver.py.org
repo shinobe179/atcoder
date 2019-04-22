@@ -1,0 +1,18 @@
+#!/home/shino/.anyenv/envs/pyenv/shims/python
+
+n = int(input())
+a_list = list(map(int, input().split()))
+
+for i in range(1, n, 2):
+    if a_list.count(n - i) != 2:
+        print(0)
+        exit()
+
+if n % 2 != 0:
+    if a_list.count(0) != 1:
+        print(0)
+        exit()
+    else:
+        print((2 ** -(-(len(a_list) - 1) // 2)) % (1000000000 + 7))
+else:
+    print((2 ** (len(a_list) // 2)) % (1000000000 + 7))
