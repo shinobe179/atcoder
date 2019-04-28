@@ -1,0 +1,18 @@
+#!/home/shino/.anyenv/envs/pyenv/shims/python
+import sys
+from collections import Counter
+
+n = int(input())
+s = input()
+ans = 0
+print(s)
+for i in range(1, len(s)):
+    formar_counter = Counter(s[0:i])
+    latter_counter = Counter(s[i::])
+    if ans < formar_counter[max(formar_counter)]:
+        ans = formar_counter[max(formar_counter)]
+    if ans < latter_counter[max(latter_counter)]:
+        ans = latter_counter[max(latter_counter)]
+    print(formar_counter, latter_counter, ans)
+
+print(ans)
