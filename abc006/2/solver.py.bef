@@ -1,0 +1,19 @@
+#!/home/shino/.anyenv/envs/pyenv/shims/python
+import sys
+from collections import Counter
+
+n=int(input())
+m=10007
+tb_dict = {1: 0, 2: 0, 3: 1}
+#tb_array = [0, 0, 1]
+tb_hash = {1: True, 2: True, 3: True}
+
+def tb(l):
+    if l in tb_hash:
+        return tb_dict[l]
+    else:
+        tb_dict[l] = tb(l-1)+tb(l-2)+tb(l-3)
+        tb_hash[l] = True
+        return tb_dict[l]
+
+print(tb(n)%m)

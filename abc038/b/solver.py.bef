@@ -1,0 +1,14 @@
+#!/home/shino/.anyenv/envs/pyenv/shims/python
+import sys
+from collections import Counter
+
+d1_array = list(map(int, input().split()))
+d2_array = list(map(int, input().split()))
+
+for i in range(len(d1_array)):
+    for j in range(len(d2_array)):
+        if d1_array[i] == d2_array[j]:
+            print('YES')
+            sys.exit()
+
+print('NO')

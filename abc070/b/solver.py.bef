@@ -1,0 +1,30 @@
+#!/home/shino/.anyenv/envs/pyenv/shims/python
+import sys
+from collections import Counter
+
+a, b, c, d = map(int, input().split())
+f_array = [0, 0]
+l_array = [0, 0]
+
+if a == c:
+    if b == d:
+        print(b - a)
+    else:
+        print(min(b - a, d - c))
+    sys.exit()    
+
+elif a < c:
+    f_array[0], f_array[1] = a, b
+    l_array[0], l_array[1] = c, d
+else:
+    f_array[0], f_array[1] = c, d
+    l_array[0], l_array[1] = a, b
+
+if f_array[1] < l_array[1]:
+    if f_array[1] - l_array[0] < 0:
+        print(0)
+    else:
+        print(f_array[1] - l_array[0])
+    sys.exit()
+else:
+    print(l_array[1] - l_array[0])
